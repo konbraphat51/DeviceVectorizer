@@ -2,7 +2,7 @@ var alpha = 0
 var beta = 0
 var gamma = 0
 var device2earth = Quaternion.identity
-var order = "xyz"
+var order = "zxy"
 
 function CalculateQuaternion() {
 	let qs = []
