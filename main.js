@@ -2,8 +2,9 @@ var alpha = 0
 var beta = 0
 var gamma = 0
 var device2earth = Quaternion.identity
+var order = "xyz"
 
-function CalculateQuaternion(order) {
+function CalculateQuaternion() {
 	let qs = []
 
 	for (let cnt = 2; cnt >= 0; cnt--) {
@@ -33,8 +34,8 @@ function CalculateQuaternion(order) {
 	device2earth = Quaternion.Inverse(earth2device)
 }
 
-function OnOrderChanged(order) {
-	CalculateQuaternion(order)
+function OnOrderChanged(_order) {
+	order = _order
 }
 
 function ReceiveOrientation(event) {
@@ -48,6 +49,7 @@ function GetDirection() {
 }
 
 function UpdateDirection() {
+	CalculateQuaternion()
 	let direction = GetDirection()
 
 	document.getElementById("x").innerHTML = direction[0]
@@ -60,10 +62,10 @@ function Start() {
 		DeviceMotionEvent.requestPermission()
 			.then((permissionState) => {
 				if (permissionState === "granted") {
-					this.$emit("permissionGranted")
+					alert("permissionGranted")
 				}
 			})
-			.catch(console.error)
+			.catch(alert("permissionDenied"))
 	}
 	window.addEventListener("deviceorientation", ReceiveOrientation, true)
 
