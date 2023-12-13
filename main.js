@@ -1,5 +1,3 @@
-const Quaternion = require("./Quaternion");
-
 var alpha = 0;
 var beta = 0;
 var gamma = 0;
