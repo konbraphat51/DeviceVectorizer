@@ -1,3 +1,10 @@
 {
-  "liveServer.settings.port": 5501
+	"liveServer.settings.port": 5501,
+	"prettier.useTabs": true,
+	"prettier.semi": false,
+	"prettier.singleQuote": false,
+	"prettier.bracketSpacing": false,
+	"prettier.quoteProps": "as-needed",
+	"prettier.trailingComma": "all",
+	"prettier.arrowParens": "always"
 }
