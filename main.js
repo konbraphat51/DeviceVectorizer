@@ -62,15 +62,15 @@ function UpdateDirection() {
 }
 
 function Start() {
-	if (typeof DeviceMotionEvent.requestPermission === "function") {
-		DeviceMotionEvent.requestPermission()
-			.then((permissionState) => {
-				if (permissionState === "granted") {
-					alert("permissionGranted")
-				}
-			})
-			.catch(alert("permissionDenied"))
-	}
+	DeviceMotionEvent.requestPermission()
+		.then((permissionState) => {
+			if (permissionState === "granted") {
+				alert("permissionGranted")
+			}
+		})
+		.catch((error) => {
+			alert("permissionDenied")
+		})
 	window.addEventListener("deviceorientation", ReceiveOrientation, false)
 
 	setInterval(UpdateDirection, 1000)
