@@ -32,6 +32,11 @@ function CalculateQuaternion() {
 		Quaternion.Multiply(qs[1], qs[2]),
 	)
 	device2earth = Quaternion.Inverse(earth2device)
+
+	document.getElementById("qw").innerHTML = earth2device.w
+	document.getElementById("qx").innerHTML = earth2device.x
+	document.getElementById("qy").innerHTML = earth2device.y
+	document.getElementById("qz").innerHTML = earth2device.z
 }
 
 function OnOrderChanged(_order) {

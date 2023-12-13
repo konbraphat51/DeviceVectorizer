@@ -6,18 +6,30 @@
 		<title>Device EulerOrder Finder</title>
 	</head>
 	<body>
-        version: 0.0.2
-		<p>
-            <h3>Direction</h3>
-			x: <label id="x">0</label><br />
-			y: <label id="y">0</label><br />
-			z: <label id="z">0</label>
+		version: 0.0.3
+		<div>
+			<p>
+                <h3>Direction</h3>
+                x: <label id="x">0</label><br />
+                y: <label id="y">0</label><br />
+                z: <label id="z">0</label>
+            </p>
 
-            <h3>DiviceOrientation Eulers</h3>
-            alpha: <label id="alpha">0</label><br />
-            beta: <label id="beta">0</label><br />
-            gamma: <label id="gamma">0</label>
-		</p>
+            <p>
+                <h3>DiviceOrientation Eulers</h3>
+                alpha: <label id="alpha">0</label><br />
+                beta: <label id="beta">0</label><br />
+                gamma: <label id="gamma">0</label>
+            </p>
+
+            <p> 
+                <h3>Quaternion (earth2device)</h3>
+                w: <label id="qw">0</label><br />
+                x: <label id="qx">0</label><br />
+                y: <label id="qy">0</label><br />
+                z: <label id="qz">0</label>
+            </p>
+		</div>
 		<p>
 			Order <br />
 			<input
@@ -62,7 +74,7 @@
 				name="order"
 				value="zxy"
 				onchange="OnOrderChanged('zxy')"
-                checked
+				checked
 			/>
 			<label for="zxy">zxy</label><br />
 
