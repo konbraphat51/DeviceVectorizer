@@ -43,6 +43,18 @@ function ReceiveOrientation(event) {
   gamma = event.gamma;
 }
 
+function GetDirection() {
+  return device2earth.RotateVector([0, 1, 0]);
+}
+
+function UpdateDirection() {
+  let direction = GetDirection();
+
+  document.getElementById("x").innerHTML = direction[0];
+  document.getElementById("y").innerHTML = direction[1];
+  document.getElementById("z").innerHTML = direction[2];
+}
+
 function Start() {
   if (typeof DeviceMotionEvent.requestPermission === "function") {
     DeviceMotionEvent.requestPermission()
@@ -54,4 +66,6 @@ function Start() {
       .catch(console.error);
   }
   window.addEventListener("deviceorientation", ReceiveOrientation, true);
+
+  setInterval(UpdateDirection, 1000);
 }
