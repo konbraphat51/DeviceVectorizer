@@ -6,7 +6,7 @@ var device2earth = Quaternion.identity
 function CalculateQuaternion(order) {
 	let qs = []
 
-	for (let cnt = 2; cnt >= 0; cnt++) {
+	for (let cnt = 2; cnt >= 0; cnt--) {
 		let q
 		switch (order[cnt]) {
 			// https://developer.mozilla.org/ja/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained
@@ -19,6 +19,8 @@ function CalculateQuaternion(order) {
 			case "y":
 				q = Quaternion.AngleAxis(-gamma, [0, 1, 0])
 				break
+			default:
+				alert("Error")
 		}
 
 		qs.push(q)
