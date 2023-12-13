@@ -42,6 +42,10 @@ function ReceiveOrientation(event) {
 	alpha = event.alpha
 	beta = event.beta
 	gamma = event.gamma
+
+	document.getElementById("alpha").innerHTML = alpha
+	document.getElementById("beta").innerHTML = beta
+	document.getElementById("gamma").innerHTML = gamma
 }
 
 function GetDirection() {
@@ -67,7 +71,7 @@ function Start() {
 			})
 			.catch(alert("permissionDenied"))
 	}
-	window.addEventListener("deviceorientation", ReceiveOrientation, true)
+	window.addEventListener("deviceorientation", ReceiveOrientation, false)
 
 	setInterval(UpdateDirection, 1000)
 }
