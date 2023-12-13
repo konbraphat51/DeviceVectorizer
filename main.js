@@ -4,6 +4,10 @@ var gamma = 0;
 
 function CalculateQuaternion(order) {}
 
+function OnOrderChanged(order) {
+  CalculateQuaternion(order);
+}
+
 function ReceiveOrientation(event) {
   alpha = event.alpha;
   beta = event.beta;
