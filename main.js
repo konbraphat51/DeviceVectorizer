@@ -28,7 +28,7 @@ function CalculateQuaternion() {
 	}
 
 	device2earth = Quaternion.Multiply(qs[0], Quaternion.Multiply(qs[1], qs[2]))
-	earth2device = Quaternion.Inverse(device2earth)
+	let earth2device = Quaternion.Inverse(device2earth)
 
 	document.getElementById("qw").innerHTML = earth2device.w
 	document.getElementById("qx").innerHTML = earth2device.x
