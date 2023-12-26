@@ -12,13 +12,13 @@ function CalculateQuaternion() {
 		switch (order[cnt]) {
 			// https://developer.mozilla.org/ja/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained
 			case "z":
-				q = Quaternion.AngleAxis(-alpha, [0, 0, 1])
+				q = Quaternion.AngleAxis(alpha, [0, 0, 1])
 				break
 			case "x":
-				q = Quaternion.AngleAxis(-beta, [1, 0, 0])
+				q = Quaternion.AngleAxis(beta, [1, 0, 0])
 				break
 			case "y":
-				q = Quaternion.AngleAxis(-gamma, [0, 1, 0])
+				q = Quaternion.AngleAxis(gamma, [0, 1, 0])
 				break
 			default:
 				alert("Error")
