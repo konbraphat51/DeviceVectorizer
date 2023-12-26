@@ -51,7 +51,7 @@ function ReceiveOrientation(event) {
 }
 
 function GetDirection() {
-	return device2earth.RotateVector([0, 1, 0])
+	return device2earth.RotateVector([0, 0, -1])
 }
 
 function UpdateDirection() {
