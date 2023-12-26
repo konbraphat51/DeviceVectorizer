@@ -64,16 +64,21 @@ function UpdateDirection() {
 }
 
 function Start() {
-	DeviceMotionEvent.requestPermission()
-		.then((permissionState) => {
-			if (permissionState === "granted") {
-				alert("permissionGranted")
-			}
-		})
-		.catch((error) => {
-			alert("permissionDenied")
-		})
-	window.addEventListener("deviceorientation", ReceiveOrientation, false)
-
-	setInterval(UpdateDirection, 1000)
+	try {
+		DeviceMotionEvent.requestPermission()
+			.then((permissionState) => {
+				if (permissionState === "granted") {
+					alert("permissionGranted")
+				}
+			})
+			.catch((error) => {
+				alert("permissionDenied")
+			})
+	} catch {
+		alert("permissionDenied")
+	}
 }
+
+window.addEventListener("deviceorientation", ReceiveOrientation, false)
+
+setInterval(UpdateDirection, 1000)
