@@ -7,7 +7,7 @@ var order = "zxy"
 function CalculateQuaternion() {
 	let qs = []
 
-	for (let cnt = 2; cnt >= 0; cnt--) {
+	for (let cnt = 0; cnt < 2; cnt++) {
 		let q
 		switch (order[cnt]) {
 			// https://developer.mozilla.org/ja/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained
